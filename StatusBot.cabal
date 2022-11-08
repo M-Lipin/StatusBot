@@ -1,0 +1,83 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           StatusBot
+version:        0.1.0.0
+description:    Status Bot to control the state of web site (alive or not)
+homepage:       https://github.com/M-Lipin/StatusBot#readme
+bug-reports:    https://github.com/M-Lipin/StatusBot/issues
+author:         Michael Lipin
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/M-Lipin/StatusBot
+
+library
+  exposed-modules:
+      API.Telegram
+      App
+      Constants
+      Front
+      Front.ConsoleHTTP
+      Front.Handle
+      Front.TelegramHTTP
+      Initialization
+      Logger
+      Logger.Handle
+      Logger.Implementation
+      Parsing
+      PrettyPrint
+      Status
+      Status.Handle
+      Status.Implementation
+      Utils
+      Utils.Exceptions
+  other-modules:
+      Paths_StatusBot
+  hs-source-dirs:
+      src
+  default-extensions:
+      OverloadedStrings
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , http-client
+    , http-conduit
+    , http-types
+    , lens
+    , lens-aeson
+    , text
+    , time
+  default-language: Haskell2010
+
+executable StatusBot-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_StatusBot
+  hs-source-dirs:
+      app
+  default-extensions:
+      OverloadedStrings
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      StatusBot
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , http-client
+    , http-conduit
+    , http-types
+    , lens
+    , lens-aeson
+    , text
+    , time
+  default-language: Haskell2010

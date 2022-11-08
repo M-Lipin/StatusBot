@@ -1,0 +1,16 @@
+{
+  "logger": {
+    "consoleLogging": true,
+    "fileLogging": true,
+    "logFile": "Log.txt",
+    "logLevel": "INFO",
+    "formatter": "DATE"
+  },
+  "front": {
+    "telegramUsage": false,
+    "telegram": {
+      "token": "",
+      "timeout": 10
+    }
+  }
+}
